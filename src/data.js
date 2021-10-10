@@ -2,7 +2,13 @@ export const data = [
     {
         name:'num1',
         id:1,
-        content:'ddddddddddddddddddddddddd',
+        content:'1111',
+        rating:4,
+    },
+    {
+        name:'num1',
+        id:1,
+        content:'2222',
         rating:4,
     },
     {
@@ -26,13 +32,7 @@ export const data = [
     {
         name:'num1',
         id:1,
-        content:'ddddddddddddddddddddddddd',
-        rating:4,
-    },
-    {
-        name:'num1',
-        id:1,
-        content:'ddddddddddddddddddddddddd',
+        content:'222',
         rating:4,
     },
     {

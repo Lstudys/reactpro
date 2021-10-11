@@ -16,7 +16,7 @@ function App() {
         <main className="py-3">
           <Container>
             <Route path='/' component={HomeScren} exact />
-            <Route path='/products/:content' component={ProductScreen} exact />
+            <Route path='/products/:id' component={ProductScreen} exact />
           </Container>
         </main>
       <Footer/>

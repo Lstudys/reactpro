@@ -1,7 +1,7 @@
 import react from 'react';
 
 import {Row,Col} from 'react-bootstrap';
-import {data} from '../data';
+import products from '../products';
 import Product from '../components/Product';
 
 export default function HomeScreen(){
@@ -10,8 +10,8 @@ export default function HomeScreen(){
         <h1>Home</h1>
         <Row>
             {
-                data.map((item) => (
-                    <Col key={item.id} sm={12} md={6} lg={4}>
+                products.map((item) => (
+                    <Col key={item._id} sm={12} md={6} lg={4}>
                         <Product product={item}/>
                     </Col>
                 ))

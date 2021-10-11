@@ -8,11 +8,11 @@ import Rating from './Rating';
 export default function Product({product}){
     return(
         <Card className="my-3 p-3 rounded">
-            <Link to={`/products/${product.content}`} >
-                <Card.Img variant="top"></Card.Img>
+            <Link to={`/products/${product._id}`} >
+                <Card.Img src={product.image} variant="top"></Card.Img>
             </Link>
             <Card.Body>
-            <Link to={`/products/${product.content}`} >
+            <Link to={`/products/${product._id}`} >
                 <Card.Title as="div">
                     <strong>{product.name}</strong>
                 </Card.Title>
@@ -23,7 +23,7 @@ export default function Product({product}){
                 </div>
             </Card.Text>
             <Card.Text as="h3">
-                   {product.content}
+                   {product.price}
             </Card.Text>
             </Card.Body>
         </Card>

@@ -13,14 +13,14 @@ import Rating from '../components/Rating';
 import products from '../products';
 
 
-export default function ProductScreen({match}){
-    const product = products.find((p)=>p.id === match.params.id);
+export default function ProductScreen({ match }){
+    const product = products.find((p) => p._id === match.params.id);
     return(
         <>
             <Link className="btn btn-dark my-3" to="/">go back</Link>
             <Row>
                 <Col md={6}>
-                    <Image src={product.image} alt={product.name} fluid/>
+                <Image src={product.image} alt={product.name} fluid/>
                 </Col>
                 <Col md={3}>
                 <ListGroup variant="flush">
@@ -37,21 +37,21 @@ export default function ProductScreen({match}){
                 <Col md={3}>
                     <Card>
                     <ListGroup variant="flush">
-                        <ListGroup.item>
+                        <ListGroup.Item>
                             <Row>
                                 <Col>price:</Col>
                                 <Col><strong>${product.price}</strong></Col>
                             </Row>
-                        </ListGroup.item>
-                        <ListGroup.item>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
                             <Row>
                                 <Col>Status:</Col>
                                 <Col>{product.countInStock>0 ? "In Stock" : "Out Of Stock"}</Col>
                             </Row>
-                        </ListGroup.item>
-                        <ListGroup.item>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
                             <Button className="btn-block" type="button" disabled={product.countInStock === 0}>Add To Cart</Button>
-                        </ListGroup.item>
+                        </ListGroup.Item>
                     </ListGroup>
                     </Card>
                 </Col>

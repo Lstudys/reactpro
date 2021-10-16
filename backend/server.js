@@ -8,7 +8,7 @@ app.get('/',(req,res)=>{
     res.send('a');
 });
 
-app.get('/products',(req,res)=>{
+app.get('/api/products',(req,res)=>{
     res.json(products);
 });
 

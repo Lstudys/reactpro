@@ -18,7 +18,6 @@ export default function ProductScreen({ match }){
     useEffect(()=>{
         const getProducts = async function(){
             const {data} =await axios.get(`/products/${match.params.id}`);
-            console.log(data);
             setProducts(data);
         }
         getProducts();

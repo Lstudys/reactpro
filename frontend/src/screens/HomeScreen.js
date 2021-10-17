@@ -8,6 +8,7 @@ export default function HomeScreen(){
     const [products,setProducts] = useState([]);
     //组件挂载时执行
     useEffect(()=>{
+        //使用async的目的是使用await，等待异步操作完成再执行下一步
         const getProducts = async ()=>{
             //axios不使用await的话，js线程不会等待结果的返回，直接执行setProducts操作
             const response = await axios.get("/api/products");

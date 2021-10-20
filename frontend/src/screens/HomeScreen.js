@@ -13,6 +13,7 @@ export default function HomeScreen(){
             //axios不使用await的话，js线程不会等待结果的返回，直接执行setProducts操作
             const response = await axios.get("/api/products");
             //更新products。data就是返回的内容，这里是json对象,response是返回的对象
+            console.log(response);
             setProducts(response.data);
         }
         getProducts();

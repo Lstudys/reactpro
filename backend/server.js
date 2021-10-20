@@ -1,13 +1,16 @@
-const express = require('express');
+import express  from 'express';
 
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
+
+import connectDB from './config/db.js';
 
 //和读取文件不同，读取文件会把文件所有内容读出，导入只是把该模块的导出内容导入
-const products = require('./data/products');
+import { products } from './data/products.js';
 
 const app = express();
 
 dotenv.config();
+connectDB();
 
 app.get('/',(req,res)=>{
     res.send('a');
@@ -25,7 +28,7 @@ app.get('/products/:id',(req,res)=>{
 })
 
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 app.listen(3001,()=>{
     console.log('server running');

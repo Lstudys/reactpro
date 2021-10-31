@@ -1,3 +1,8 @@
+/**
+ * 连接本地数据库的函数
+ * created by 李永晖 on 2021/10/20
+ */
+
 import mongoose from 'mongoose';
 
 const connectDB = async ()=>{

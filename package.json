@@ -1,40 +1,28 @@
 {
   "name": "reactpro",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "bootstrap": "^5.1.1",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.0.0-rc.0",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
-  },
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/Lstudys/reactpro.git",
+  "author": "Li <1925060001@henu.edu.cn>",
+  "license": "MIT",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "yarn --cwd frontend start",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "data:import":"node backend/seeder",
+    "data:destroy":"node backend/seeder -d"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^2.0.1",
+    "mongoose": "^6.0.11"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "nodemon": "^2.0.13"
   }
 }

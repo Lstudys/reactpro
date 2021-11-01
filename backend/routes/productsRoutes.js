@@ -2,20 +2,26 @@ import express from 'express';
 
 // import products from '../data/products.js';
 import ProductModule from '../models/productModule.js';
+import asyncHandler from 'express-async-handler';
 
 const router = express.Router()
 
 
-router.get('/:id',async (req,res)=>{
+router.get('/:id',asyncHandler(async (req,res)=>{
     const products = await ProductModule.findById(req.params.id);
-    res.json(products);
-})
+    if(products){
+        res.json(products);
+    }else{
+        res.send(404);
+    }
+}))
 
 
-router.get('/',async (req,res)=>{
+
+router.get('/',asyncHandler(async (req,res)=>{
     const products = await ProductModule.find({});
     res.json(products);
-})
+}))
 
 
 

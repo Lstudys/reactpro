@@ -17,7 +17,9 @@ export default function ProductScreen({ match }){
     const [product,setProducts] = useState([]);
     useEffect(()=>{
         const getProducts = async function(){
-            const {data} =await axios.get(`/products/${match.params.id}`);
+            // match相当于请求req，params是它的请求参数
+            const {data} =await axios.get(`/api/products/${match.params.id}`);
+            console.log(data);
             setProducts(data);
         }
         getProducts();

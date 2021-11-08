@@ -17,10 +17,9 @@ export default function ProductScreen({ match }){
     const [product,setProducts] = useState([]);
     useEffect(()=>{
         const getProducts = async function(){
-            // match中没有id参数了，id用的是products对象的_id属性，现在_id属性删了
             // match相当于请求req，params是它的请求参数
             const {data} =await axios.get(`/api/products/${match.params.id}`);
-            // const {data} =await axios.get(`/api/products/1`);
+            console.log(data);
             setProducts(data);
         }
         getProducts();

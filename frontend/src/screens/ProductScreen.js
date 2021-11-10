@@ -4,26 +4,27 @@
 
 
 
-import react,{useState,useEffect} from 'react';
+import react,{useEffect} from 'react';
 
 import {Link} from 'react-router-dom';
 import {Row,Col,ListGroup,Image,Card,Button} from 'react-bootstrap';
 
+import {useDispatch,useSelector} from 'react-redux';
+
 import Rating from '../components/Rating';
-import axios from 'axios';
+
+import {productDetailAction} from '../actions/productActions.js';
 
 
 export default function ProductScreen({ match }){
-    const [product,setProducts] = useState([]);
+    // const [product,setProducts] = useState([]);
+    const dispatch = useDispatch();
+    const productDetailData = useSelector(state => state.productDetail);
+    const {loading,product,error} = productDetailData;
+    console.log(product + '111');
     useEffect(()=>{
-        const getProducts = async function(){
-            // match相当于请求req，params是它的请求参数
-            const {data} =await axios.get(`/api/products/${match.params.id}`);
-            console.log(data);
-            setProducts(data);
-        }
-        getProducts();
-    },[]);
+        dispatch(productDetailAction(match.params.id));
+    },[dispatch,match]);
 
     // const product = products.find((p) => p._id === match.params.id);
     return(

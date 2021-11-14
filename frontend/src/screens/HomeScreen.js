@@ -14,7 +14,7 @@ const dispatch = useDispatch();
 const productData = useSelector((state) => state.productList);
 const {loading,products,error} = productData;
 console.log(products + '111');
-    //组件挂载时执行
+    //组件挂载时执行，[]中的参数变化时执行
     useEffect(()=>{
         dispatch(productListAction);
     },[dispatch]);

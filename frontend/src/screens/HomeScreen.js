@@ -20,7 +20,7 @@ console.log(products + '111');
     },[dispatch]);
     return(
         <>
-        <h1>Home</h1>
+        <h1>商品</h1>
         {loading? (<Loading/>): error? (<ErrorMessage variant={'danger'} children={error}/>):
         <Row>
         {

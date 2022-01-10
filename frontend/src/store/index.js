@@ -10,11 +10,13 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 
 // reducer
 import {productListReducer,productDetailReducer} from '../reducers/productReducer.js';
+import {cartReducer} from '../reducers/cartReducers.js';
 
 
 const reducer = combineReducers({
     productList:productListReducer,
-    productDetail:productDetailReducer
+    productDetail:productDetailReducer,
+    cart:cartReducer
 });
 
 const initialState = {};
